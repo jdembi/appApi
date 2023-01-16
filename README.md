@@ -2,25 +2,25 @@
 
 
 ## Forneça instruções claras sobre como executar o aplicativo no modo de desenvolvimento
-Eu estou usando o **PHP** a frameworks é **Laravel** para o meu projecto, para colocar o aplicativo em modo de desenvolvimento os passo são os seguintes:
+Eu estou usando o **PHP** a frameworks é **Laravel** para o meu projecto, para colocar o aplicativo em modo de desenvolvimento os passos são os seguintes:
 
 1- Saber o sistema operativo que o desenvolvidor está a usar, para poder escolher um servidor web que ele vai ter que utilizar, eu estou usando o Apache e a liguagem de programação é php como já enfatizei em cima. ligar o servidor web.
 
-2-Instalar o Laravel se não tiver o laravel instal usando o comando: composer install para instalar dependencias do laravel.
+2-Instalar o Laravel se não tiver o laravel instalado usando o comando: composer install para instalar dependencias do laravel.
 
-3-Importar a base de dados criada por mim e exportada encontrada na Pasta database 'refera_bd.sql' no mysql porque estou a usar mysql para base de dados.
+3-Importar a base de dados criada por mim e exportada encontrada na Pasta database **'refera_bd.sql'** no mysql porque estou a usar mysql para base de dados.
 
 4- Gerar o .env onde fica todas as configurações para teres acesso a conexão da base de dados usando os comando no terminal ou na linha de comando na raiz do projecto 
--copy .env.example .env
--php artisan key:generate
+**-copy .env.example .env**
+**-php artisan key:generate**
 
-5-Depois desse passos podes usar o comando 
--php artisan serve
+5-Depois desses passos podes usar o comando 
+**-php artisan serve**
  e o projecto será rodado
 
  Para testar a API em função dos Endpoinds criados, depois do projecto tiver a rodas podes usar o **POSTMAN** OU um similar para testar ela a rota para API É
 
- {url do projecto após estar executada}/api/ENDPOINT
+ {url do projecto após estar em estado de execução}/api/ENDPOINT
 
  exemplo 
 
@@ -31,15 +31,17 @@ Eu estou usando o **PHP** a frameworks é **Laravel** para o meu projecto, para 
  ### Forneça instruções claras sobre como o aplicativo seria executado em um ambiente de produção
 
  Para colocar um aplicativo em produção é necessario ter atenção algumas coisas,primeiramente temos que ter um dominio pra podermos acessar o aplicativo externamente, depois temos que seguir alguns passos que descrevi na primeira pergunta, temos que ter um servidor web, um servidor de base de dados e a linguagem de progamação instalada no servidor depois disso partiremos para os passos de coloção do aplicativo em produção se tratando de ser feito com o framework laravel existem passos a seguir que são:
- 1-abrir o ficheiro .env na raiz do projecto
+ 
+ 1-abrir o ficheiro .env na raiz do projecto onde tiver 
+ APP_ENV=local ficar  APP_ENV=production 
+ 
+ isso indicará que o aplicativo está se colocado em produção.
 
-    onde tiver APP_ENV=local ficar  APP_ENV= production isso indicará que o aplicativo está se colocado em produção.
-
-    APP_DEBUG=true passar para APP_DEBUG=false
+APP_DEBUG=true passar para APP_DEBUG=false
 
 2-composer install --optimize-autoload --no-dev usar esse comando para baixar algumas dependencias actualizadas.
 
-php composer install
+**php composer install**
 $ php composer dumpautoload -o
 $ php artisan config:cache
 $ php artisan route:cache
@@ -57,6 +59,7 @@ Eu criaria uma página de Login em principio, teria que ter uma outra tabela par
 Para o crud dos pedidos eu criei 4 EndPoints que podem ser localizado na Pasta 
 
 **routes** arquivo **api** 
+
 EndPoint para Listar os Pedidos
 **listar_order**
 
@@ -86,16 +89,27 @@ EndPoint para Eliminar Categoria
 ## Banco de dados para armazenar dados dos seguintes recursos
 Sobre essa questão eu criei 2 tabelas em função do que foi Solicitado 
 Primeiro crei a tabela **Categoria** que tem o seguintes campos
+
 -id é a chave primaria da tabela
+
 -Categoria é o campo onde será armazenado as categorias
+
 Depois criei a tabela **Orden** ou **Pedido** que tem os seguintes campos
+
 -id é a chave primária da tabela
+
 -categoria que é chave estrageira, tivemos aqui uma relação muitos para 1 onde podemos ter 1 categoria para vários pedidos.
+
 -Nome de contacto,
+
 -Numero do contacto,
+
 -Compania 
+
 -Deadline
+
 -Descricao do Pedido
+
 -agencia
 
 aqui tenho a descrição das duas tabelas usadas no projecto.
